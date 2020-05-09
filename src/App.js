@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './App.css';
 require('dotenv').config();
@@ -10,11 +10,7 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
-    getPhotos();
-  }, [page]);
-
-  const getPhotos = () => {
+  const getPhotos = useCallback(() => {
     let apiUrl = `https://api.unsplash.com/photos?`;
     if (query)
       apiUrl = `https://api.unsplash.com/search/photos?&query=${query}`;
@@ -29,7 +25,11 @@ export default function App() {
         if (page === 1) setImages(imagesFromApi);
         setImages((images) => [...images, ...imagesFromApi]);
       });
-  };
+  }, [page, query]);
+
+  useEffect(() => {
+    getPhotos();
+  }, [page, getPhotos]);
 
   const searchPhotos = (e) => {
     e.preventDefault();
