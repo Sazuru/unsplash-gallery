@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/unsplash-gallery/static/css/main.7752d822.chunk.css",
+    "main.js": "/unsplash-gallery/static/js/main.23c4ee79.chunk.js",
+    "main.js.map": "/unsplash-gallery/static/js/main.23c4ee79.chunk.js.map",
+    "runtime-main.js": "/unsplash-gallery/static/js/runtime-main.c544deff.js",
+    "runtime-main.js.map": "/unsplash-gallery/static/js/runtime-main.c544deff.js.map",
+    "static/js/2.b8056bc3.chunk.js": "/unsplash-gallery/static/js/2.b8056bc3.chunk.js",
+    "static/js/2.b8056bc3.chunk.js.map": "/unsplash-gallery/static/js/2.b8056bc3.chunk.js.map",
+    "index.html": "/unsplash-gallery/index.html",
+    "precache-manifest.e8d1fc6e0e344f75a248ca994a2d024a.js": "/unsplash-gallery/precache-manifest.e8d1fc6e0e344f75a248ca994a2d024a.js",
+    "service-worker.js": "/unsplash-gallery/service-worker.js",
+    "static/css/main.7752d822.chunk.css.map": "/unsplash-gallery/static/css/main.7752d822.chunk.css.map",
+    "static/js/2.b8056bc3.chunk.js.LICENSE.txt": "/unsplash-gallery/static/js/2.b8056bc3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c544deff.js",
+    "static/js/2.b8056bc3.chunk.js",
+    "static/css/main.7752d822.chunk.css",
+    "static/js/main.23c4ee79.chunk.js"
+  ]
+}
