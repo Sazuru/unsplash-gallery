@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import './App.css';
+import './App.scss';
 import Search from './components/Search';
 import PhotoList from './components/PhotoList';
 require('dotenv').config();
@@ -23,7 +23,6 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         const imagesFromApi = data.results ?? data;
-
         if (page === 1) setImages(imagesFromApi);
         setImages((images) => [...images, ...imagesFromApi]);
       });
