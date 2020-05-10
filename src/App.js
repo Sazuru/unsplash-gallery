@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './App.css';
+import Search from './components/Search';
+import PhotoList from './components/PhotoList';
 require('dotenv').config();
 
 const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
@@ -48,36 +50,14 @@ export default function App() {
   return (
     <div className="app">
       <h1>Unsplash Image Gallery!</h1>
-
-      <form onSubmit={searchPhotos}>
-        <input
-          type="text"
-          placeholder="Search Unsplash..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-
-        <button>Search</button>
-      </form>
+      <Search searchPhotos={searchPhotos} query={query} setQuery={setQuery} />
       <InfiniteScroll
         dataLength={images.length}
         next={() => setPage((page) => page + 1)}
         hasMore={true}
         loader={<h4>Loading...</h4>}
       >
-        <div className="image-grid">
-          {images.map((image, index) => (
-            <a
-              className="image"
-              key={index}
-              href={image.links.html}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={image.urls.regular} alt={image.alt_description} />
-            </a>
-          ))}
-        </div>
+        <PhotoList images={images} />
       </InfiniteScroll>
     </div>
   );
